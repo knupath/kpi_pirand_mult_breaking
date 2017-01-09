@@ -18,7 +18,7 @@
 ## Expected output:
   Output can be found in *example_output.csv*.
 
-  > Operating on 512 clusters.
+  > Operating on 512 tDSPs.
 
   > Iteration, World Size, coordsPerRank, # Samples,  Iteration RunTime (Sec),  Pi Value
 

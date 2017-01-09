@@ -38,7 +38,8 @@ int main(int argc, char* argv[])
   output << "Iteration, World Size,  coordsPerRank,        # Samples, Iteration RunTime (Sec), Pi Value" << std::endl;
 
   // Run Limit (9 = 1 billion per tdsp)
-  int runLimit = 7;
+  // **Note: KWS v0.1 does not support multiple Run Limits
+  int runLimit = 1;
 
   // Set first coordsPerRank to 1
   int coordsPerRank = 1;
@@ -71,17 +72,17 @@ int main(int argc, char* argv[])
 		float pi_estimate;
 		uint32_t world_size;
 	} packet;
-    
+
     // Receive the estimate
 	std::vector<receive_format> packets(1);
     hc.ReceiveCount(packets);
 
     // Output Run Info
-    output << std::setw(9) << i 
+    output << std::setw(9) << i
     	<< ", " << std::setw(10) << packets[0].world_size
-		<< ", " << std::setw(14) << coordsPerRank 
+		<< ", " << std::setw(14) << coordsPerRank
 		<< ", " << std::setw(16) << long(coordsPerRank) * cb.Size() * 8
-		<< ", " << std::setw(16) << double(std::clock() - begin) / CLOCKS_PER_SEC 
+		<< ", " << std::setw(16) << double(std::clock() - begin) / CLOCKS_PER_SEC
 		<< ", " << std::setw(14) << packets[0].pi_estimate
 		<< std::endl;
   }
