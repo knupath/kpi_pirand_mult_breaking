@@ -1,18 +1,4 @@
-# Knureon Job Queue Example: kpi_pirand
-
-## Description:
-  Uses a randomized number seeded against time
-
-  > // Randomizes how many increments of the power of 2 to run
-
-  > srand(time(NULL)); // Seed the time
-
-  > int max = 31; // 2^30 max power of 2 for int coordsPerRank
-
-  > int min = 2; // Minimum, do 1 run
-
-  > int runLimit = rand()%(max-min + 1) + min;
-
+# Example Program: kpi_pirand_mult
 
 ## Code Description:
   The kpi_pirand example program uses the KPI Host Runtime C++ wrapper library to
@@ -32,19 +18,13 @@
 ## Expected output:
   Output can be found in *example_output.csv*.
 
-  > Operating on 64 clusters.
+  > Operating on 512 clusters.
 
-  > Iteration, coordsPerRank, # Samples,  Time,  Pi Value
+  > Iteration, World Size, coordsPerRank, # Samples,  Iteration RunTime (Sec),  Pi Value
 
-  > 1, 64, 2,  1024,  0.004429,  3.13894
+  > 1, 512, 10,  5120,  0.004429,  3.15156
 
   > Total Time: 0.164694
 
 ## Build and run:
-  1. Make sure your SDB environmental variable is set:
-
-    > export KNU_DEVICE=sdb045
-
-  2. Run *make* in example application directory
-  3. Execute the compiled example code using *./[example application]* in example application directory
-    * Note: This application is compiled as *example*
+  1) Provide this git URL into KWS and click 'Run'.
