@@ -39,7 +39,7 @@ int main(int argc, char* argv[])
 
   // Run Limit (9 = 1 billion per tdsp)
   // **Note: KWS v0.1 does not support multiple Run Limits
-  int runLimit = 1;
+  int runLimit = 7;
 
   // Set first coordsPerRank to 1
   int coordsPerRank = 1;
